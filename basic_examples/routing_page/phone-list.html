@@ -1,0 +1,32 @@
+	검색 : 
+	<input type="text" ng-model="searchKeyword"/>
+	<!--
+	searchKeyword 라는 이름의 앵귤러 모델을 선언해주었다.
+	여기에 입력된 내용은 searchKeyword 라는 모델에 자동으로 들어간다.	
+	-->
+	
+	정렬 : 
+	<select ng-model="orderProperty">
+		<option value="name" selected>이름</option>
+		<option value="snippet">설명</option>
+		<option value="no">번호</option>
+	</select>
+	<!--
+	orderProperty 라는 임의의 이름으로 정렬 순서를 정해줄 앵귤러 모델을 선언해 주었다.	
+	-->
+	
+	
+	<ul>
+		<li ng-repeat="phone in phones | filter:searchKeyword | orderBy:orderProperty">
+			<img ng-src="{{phone.url}}">
+			<a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+            <p>{{phone.snippet}}</p>
+		</li>
+		
+		
+	</ul>
+	
+	<p>
+		현재 검색 키워드 : {{searchKeyword || '없음'}}<br />
+		현재 정렬 기준 : {{orderProperty}}
+	</p>

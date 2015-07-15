@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>API APP</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body class="well" ng-controller="UserListController">
+  <h1>{{appName}}</h1>
+ 
+  <table class="table">
+    <caption>API APP</caption>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <th scope="row"><input type="checkbox" ng-model="user.check"></th>
+        <td>{{user.userName}}</td>
+      </tr>
+    </tbody>
+  </table>
+ 
+<p>유저 <strong>{{users.length}}</strong> 명 | 남은 할일 <strong>{{remain()}}</strong>개 </p>
+ 
+<form name="newItemForm" class="form-inline" action="">
+ <div class="form-group">
+  <label class="sr-only" for="newItemText">추가할 유저이름</label>
+  <input type="text" class="form-control" name="newItemText" placeholder="추가할 유저이름" ng-model="newUser">
+</div>
+<button type="submit" class="btn btn-default" ng-click="addNewUser(newUser)">추가</button>
+</form>
+</body>
+</html>

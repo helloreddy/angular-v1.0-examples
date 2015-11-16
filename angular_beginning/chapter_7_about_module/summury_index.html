@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="myApp">
+<!-- ng-app="myApp" 을 통해 우리가 만든 모듈을 사용해서 어플리케이션이 구동된다. -->
+
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js">
+		</script>
+		<script type="text/javascript" charset="utf-8">
+
+		// 모듈 선언!
+		var myAppModule = angular.module('myApp', []);
+
+		// 모듈 설정
+		// 여기에서는 필터링 기능을 추가한다.
+		myAppModule.filter('myFilter',
+		function()
+		{
+			//greet 이라는 이름의 필터를 만들었고 그 기능이 여기에 선언된다.
+
+			return function(str)
+			{
+				return 'Hello, ' + str + '!'; //특정 문자열을 더한 후 반환!
+			};
+		});
+
+		</script>
+	</head>
+	<body>
+		<div>
+			{{ 'World' | myFilter }}
+		</div>
+	</body>
+</html>

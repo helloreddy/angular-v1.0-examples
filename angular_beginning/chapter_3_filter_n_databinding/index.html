@@ -1,0 +1,74 @@
+<html ng-app>
+<!--
+하위 모든 요소는 모두 앵귤러 어플리케이션으로 다뤄진다.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>My HTML File</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js">
+	</script>
+	<!--
+	이 태그는 당연하게도 앵귤러js를 로드하고, 더불어 HTML페이지가 모두 로드된 후에
+	브라우저에 의해 실행되는 콜백을 등록한다.
+	-->
+
+	<script type="text/javascript" charset="utf-8">
+
+		/*
+		 * BODY 태그 안에 ng-controller 에서 할당해준 컨트롤러의 이름과 동일한
+		 * 자바스크립트 함수가 자동으로 매칭된다.
+		 * ng-controller에서 호출할 때는 scope 파라메터를 따로 넣지 않았지만,
+		 * 실제 컨트롤러 함수에서는 아래와 같이 $scope 를 파라메터로 받는다.
+		 */
+		function PhoneListController($scope)
+		{
+			//$scope는 지금까지 느낄 때 jQuery에서 $에 해당하는 전역 객체로 느껴진다.
+			//어느 곳에서도 접근할 수 있도록 설정해주는 역할을 한다고 보인다.
+			$scope.phones =
+			[
+     			{
+     				"name": "Nexus S",
+					"snippet": "Fast just got faster with Nexus S."
+				},
+				{
+					"name": "Motorola XOOM™ with Wi-Fi",
+					"snippet": "The Next, Next Generation tablet."
+				},
+				{
+					"name": "MOTOROLA XOOM™",
+      				"snippet": "The Next, Next Generation tablet."
+      			}
+  			];
+
+			$scope.hello = "Hello, World!";
+
+  			//이렇게 선언된 배열 형태의 데이터 모델은 후에 NG-REPEAT에 의해 사용된다.
+		}
+
+	</script>
+
+
+</head>
+<body ng-controller="PhoneListController">
+
+	<input type="text" ng-model="searchKeyword"/>
+	<!--
+	searchKeyword 라는 이름의 앵귤러 모델을 선언해주었다.
+	여기에 입력된 내용은 searchKeyword 라는 모델에 자동으로 들어간다.
+	-->
+
+	<ul>
+		<li ng-repeat="phone in phones | filter:searchKeyword">
+			이름 : {{phone.name}}<br />
+			설명 : {{phone.snippet}}
+		</li>
+
+		<!--
+		비슷한거 같지만, 자세히 살펴보면, filter 가 추가되었다. filter 함수는 ng-repeat에 영향을 주게 된다.
+		특별히 searchKeyword에 입력된 값에 따라 내용을 필터링해서 보여준다.
+		-->
+
+	</ul>
+</body>
+</html>

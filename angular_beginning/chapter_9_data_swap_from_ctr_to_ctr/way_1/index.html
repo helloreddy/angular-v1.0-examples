@@ -1,0 +1,49 @@
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>컨트롤러간 데이터 교환</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+  <!--
+  이 태그는 당연하게도 앵귤러js를 로드하고, 더불어 HTML페이지가 모두 로드된 후에
+  브라우저에 의해 실행되는 콜백을 등록한다.
+-->
+
+<script type="text/javascript" charset="utf-8">
+var app=angular.module('myApp', []);
+
+/*
+보통 서비스의 경우 객체를 리턴하는 방식으로 사용한다. 또 이때 리턴되는 객체는
+싱글톤 패턴이 적용되어 사용하는 곳에서 모두 동일한 객체를 사용하게 된다.
+이런 특징을 사용해서 하나의 서비스를 공유해서 이 서비스 객체에
+값을 설정하는 메서드와 값을 저장하는 변수를 두고 사용하게 된다.
+*/
+app.factory('franksPizza', function() {
+  var pizzaService = {};
+  pizzaService.slicesLeft = 8;
+  return pizzaService;
+});
+
+function Ctrl1($scope, franksPizza) {
+  $scope.pizza = franksPizza;
+}
+
+function Ctrl2($scope, franksPizza) {
+  $scope.pizza = franksPizza;
+}
+</script>
+
+</head>
+<body>
+  <div ng-controller="Ctrl1">
+    <h2>Ctrl1</h2>
+    Slices Left: <input ng-model="pizza.slicesLeft">
+  </div>
+  <hr />
+  <div ng-controller="Ctrl2">
+    <h2>Ctrl2</h2>
+    Slices Left: {{pizza.slicesLeft}}
+  </div>
+</body>
+</html>

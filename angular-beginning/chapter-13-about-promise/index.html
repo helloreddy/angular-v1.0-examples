@@ -1,0 +1,26 @@
+<html ng-app="demo-app">
+<head>
+</head>
+<!-- �깮�왂 -->
+<body ng-controller="mainCtrl">
+  <div class="container">
+    <h1>answer in three seconds.</h1>
+    <div class="well clearfix">
+      <div>
+        10-1+29+2-1 = <input ng-model="answer" ng-disabled="result">
+        {{ result }} {{ info }}
+      </div>
+      <div class="pull-right">
+        <button class="btn btn-info" ng-click="giveUp()">Give up</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="well"> <br> </p>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

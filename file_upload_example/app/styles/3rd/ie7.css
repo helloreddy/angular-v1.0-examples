@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+/* ---------------------- layout ----------------------- */
+.container{width:1140px !important;}
+
+.brand_area{margin-top:30px}
+.brand_area:after{content:'';display:block;width:0;height:0;float:none;clear:both} 
+.brand{float:left; margin:0 auto; width:360px !important;}
+
+.service1{margin-right:10px;}
+.service1,
+.service2,
+.service1 .service_box,
+.service2 .service_box{position:relative; float:left; width:535px !important;}
+.service_box .service_btn{position:absolute; top:18px; right:15px}
+
+
+.navbar-toggle{display:none;}
+
+.navbar-collapse{display:block; position:absolute; top:25px; right:0; border-top:none;}
+.navbar-collapse > ul.nav > li{float:left;}
+
+section{border-bottom:1px solid #ddd}
+section.cus_consulting,
+section.cus_hosting{border-bottom:none}
+
+section.visual{height:395px;}
+.carousel, 
+.carousel-inner,
+.carousel-caption{position:relative; left:0 !important; top:0 !important; margin:0; padding:0; width:1140px; height:395px;}
+
+.carousel-indicators {margin:0 auto; width:auto; position: absolute; left:50%; bottom:20px; text-align: center;}
+.carousel-indicators li{float:left;}
+
+.visual_txt{position:absolute; left:0}
+.visual_txt.txt1{width:376px;}
+.visual_txt.txt2{width:535px;}
+.visual_img{position:absolute; right:0;}
+
+footer address{float:left; width:83.33%;}
+
+/* ---------------------- sub_company ----------------------- */
+.nav-tabs.nav-justified > li {float: left; width:16.666% !important; border-top:1px solid #ddd}
+.nav-tabs.nav-justified > li a{border-top:1px solid #ddd}
+section.com_history{background:#F3F8FB;}
+
+/* ---------------------- sub_brand ----------------------- */
+.brand_function > li {width:268px}
+
+/* ---------------------- sub_solution ----------------------- */
+.consult > ul{height:90px;}
+.sol_function > li{width:130px;}
+.sol_function > li+li+li+li+li{border-right:0}
+
+/* ---------------------- sub_SI&IT ----------------------- */
+.it_step{height:100px; border:1px solid #ddd;}
+.it_step:after{content:'';display:block;width:0;height:0;float:none;clear:both} 
+.it_step > ul > li > dl {width:200px;}
+.it_step > ul > li+li+li+li > dl { background:none;}
+
+.si_customer {height:40px; background:#F3F3F3;}
+.si_customer > ul > li{background:#F3F3F3; border:none;}
+
+
+h4.tit_si_customer{position:relative;}
+h4.tit_si_customer > a{position:absolute; display:inline-block; right:0; bottom:0;}
+
+
+
+.it_customer {height:40px; background:#F3F3F3;}
+.it_customer > ul > li{width:520px;background:#F3F3F3; border:none;}
+
+/* ---------------------- sub_customers ----------------------- */
+.client_top{float:left; margin:5px; padding:0; width:560px !important;}

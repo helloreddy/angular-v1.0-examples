@@ -1,0 +1,21 @@
+<html ng-app="app" lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Angular Service Test</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+  <div>
+      <div ng-controller="CalculatorController">
+          Enter a number:
+          <input type="number" ng-model="number" />
+          <button ng-click="doSquare()">X<sup>2</sup></button>
+          <button ng-click="doCube()">X<sup>3</sup></button>
+
+          <div>Answer: {{answer}}</div>
+      </div>
+  </div>
+</body>
+</html>

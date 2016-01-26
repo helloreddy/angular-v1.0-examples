@@ -1,0 +1,96 @@
+<html ng-app="treeExam" ng-controller="treeController" >
+	<head>
+		<meta charset="utf-8">
+		<title>Directive Example</title>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+		<script src="js/tree.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			//어플리케이션 모듈을 선언하고, Directive를 인젝션한다.
+			var directiveExam = angular.module('treeExam', ['euTree.directive']);
+
+			directiveExam.controller('treeController', ['$scope', function($scope)
+			{
+				console.log(">>> Controller : treeController")
+				//roleList에 tree 데이터 할당
+				$scope.roleList =
+				[
+					{
+						"roleName" : "사용자",
+						"roleId" : "role1",
+						"children" :
+						[
+							{
+								"roleName" : "하부사용자1",
+								"roleId" : "role11",
+								"children" : []
+							},
+							{
+								"roleName" : "하부사용자2",
+								"roleId" : "role12",
+								"children" :
+								[
+									{
+										"roleName" : "하부사용자2의 하부",
+										"roleId" : "role121",
+										"children" :
+										[
+											{
+												"roleName" : "하부사용자2의 하부의 하부1",
+												"roleId" : "role1211",
+												"children" : []
+											},
+											{
+												"roleName" : "하부사용자2의 하부의 하부2",
+												"roleId" : "role1212",
+												"children" : []
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"roleName" : "관리자",
+						"roleId" : "role2",
+						"children" : []
+					}
+				];
+
+			}]);
+
+		</script>
+
+	</head>
+	<body>
+		<!--
+		[TREE attribute]
+		tree-data : the tree model on $scope (ex: "$scope.roleList" in this html file)
+		node-id : each node's id
+		node-name : each node's name
+		node-state : expand/collapse - node's default state
+
+		expand-icon, collapse-icon, child-icon : icon image file URL
+
+		** 트리 요소를 선택할 때마다 'nodeSelected' 라는 이름으로 브로드캐스트하므로,
+		** 'nodeSelected' 라는 이름으로 $on으로 브로드캐스트를 받아서 args의
+		** selectedNode의 'node-id' 값을 통해 필요한 처리를 해줄 수 있다.
+		**
+		-->
+		<eu-tree
+  		tree-data="roleList"
+  		node-id="roleId"
+  		node-name="roleName"
+  		node-state="expand"
+  		expand-icon="img/folder.png"
+  		collapse-icon="img/folder-closed.png"
+  		child-icon="img/file.png" >
+		</eu-tree>
+
+		<script type="text/javascript">
+			console.log("HTML 렌더링");
+		</script>
+	</body>
+</html>

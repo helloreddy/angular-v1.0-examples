@@ -1,0 +1,32 @@
+<html ng-app="ServiceTestApp" lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Angular Service Test</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script>
+  var app = angular.module('ServiceTestApp', []);
+
+  app.factory('MainFactory', function(){
+    var _artist = 'Shakira';
+    var service = {};
+
+    service.getArtist = function(){
+      return _artist;
+    }
+    
+    return service;
+  });
+
+  app.controller('MainController', function($scope, MainFactory){
+    $scope.artist = MainFactory.getArtist();
+  });
+
+</script>
+</head>
+<body>
+  <div ng-controller="MainController as main">
+    {{ main.artist }}
+  </div>
+</body>
+</html>

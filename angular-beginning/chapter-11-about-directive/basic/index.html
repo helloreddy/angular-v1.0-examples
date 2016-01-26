@@ -1,0 +1,29 @@
+<html ng-app="directiveExam">
+<head>
+  <meta charset="utf-8">
+  <title>Directive Example</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+
+  //지시어 선언
+  //지시어는 카멜 케이스로 네이밍한다.
+  angular.module('directiveExam.directive', []).directive('helloWorld', function()
+  {
+    return {
+      restrict: 'E', //Element(태그)
+      template: '헬로우 월드 ㅋㅋ'
+    };
+  });
+
+  //어플리케이션 모듈을 선언하고, Directive를 인젝션한다.
+  angular.module('directiveExam', ['directiveExam.directive']);
+
+  </script>
+</head>
+<body>
+  <!-- 지시어를 사용할 때는 스네이크 케이스로 네이밍해준다. -->
+  <hello-world></hello-world>
+</body>
+</html>

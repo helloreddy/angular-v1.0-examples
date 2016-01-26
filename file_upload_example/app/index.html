@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="X-UA-Cmpatible" content="IE=edge,chrome=1" />
+<title>Cabinet</title>
+<!-- 모바일 웹 페이지 설정 -->
+<link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-144-precomposed.png" />
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet'>
+<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet'>
+
+<!-- build:css styles/vendor.css -->
+<link rel="stylesheet" type="text/css" href="styles/3rd/bootstrap.min.css" />
+<!-- endbuild -->
+
+<!-- build:css styles/main.css -->
+<link rel="stylesheet" type="text/css" href="styles/syntax.css" />
+<link rel="stylesheet" type="text/css" href="styles/screen.css" />
+<link rel="stylesheet" type="text/css" href="styles/print.css" />
+<!-- endbuild -->
+
+<style>
+.nonDraggableImage{
+  	-webkit-user-drag: none;
+}
+.ui-loader-default{
+	display: none;
+}
+</style>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="scripts/3rd/html5shiv.js"></script>
+<script type="text/javascript" src="scripts/3rd/respond.min.js"></script>
+<![endif]-->
+<!--[if gt IE 9]>
+<link rel="stylesheet" type="text/css" href="styles/3rd/ie10.css" />
+<script type="text/javascript" src="scripts/3rd/ie10.js"></script>
+<![endif]-->
+
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="styles/3rd/ie7.css" ><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="styles/3rd/ie8.css" ><![endif]-->
+
+<base href="/">
+</head>
+<body ng-app="CabinetApp">
+
+  <div class="wrapper">
+
+		<header>
+			<a href='/'>
+				<h2>CABINET PROJECT</h2>
+			</a>
+		</header>
+
+		<div class='flexbox-container'>
+			<div class='flexbox-column' id='main'>
+				<section class='content'>
+					<h1>TEST PAGE</h1>
+					<br>
+					<p>
+            This page is for
+          </p>
+					<p>
+						Email : <a href="mailto:fantasticy@kpost.com"><span>fantasticy@kpost.com</span></a>
+					</p>
+					<hr>
+					<h2>Testing List</h2>
+					<ul>
+						<li><a href="#/websocket">메인</a>
+						<li><a href="#/fileupload">파일업로드</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+		<hr>
+
+		<div ng-view=""></div>
+
+		<!-- build:js scripts/vendor.js -->
+		<script type="text/javascript" src="scripts/3rd/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/3rd/bootstrap.min.js"></script>
+		<script type="text/javascript" src="scripts/3rd/angular.js"></script>
+		<script type="text/javascript" src="scripts/3rd/angular-route.js"></script>
+		<script type="text/javascript" src="scripts/3rd/angular-touch.js"></script>
+		<script type="text/javascript" src="scripts/3rd/angular-animate.js"></script>
+		<script type="text/javascript" src="scripts/3rd/ng-file-upload-shim.min.js"></script><!-- for no html5 browsers support -->
+		<script type="text/javascript" src="scripts/3rd/ng-file-upload.min.js"></script>
+		<script type="text/javascript" src="scripts/3rd/jquery-ui.js"></script>
+		<script type="text/javascript" src="scripts/3rd/jquery.mobile-1.4.5.js"></script>
+		<!-- endbuild -->
+		<!-- build:js scripts/main.js -->
+		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/javascript" src="scripts/controllers/test-websocket.js"></script>
+		<script type="text/javascript" src="scripts/controllers/test-fileupload.js"></script>
+    <!-- endbuild -->
+
+		<hr>
+		<footer>Made by KPOST DEVELOPMENT TEAM.</footer>
+	</div>
+
+</body>
+</html>

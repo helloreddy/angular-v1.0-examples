@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.container{width:1140px !important;}
+
+footer address{float:left; width:83.33%;}
+.brand_area{margin:30px 0 0 20px;}
+.brand{float:left; margin:0 auto; width:348px !important;}
+
+.service1{margin-right:10px;}
+.service1,.service2{float:left; width:535px !important;}
+
+.navbar-toggle{display:none;}
+
+.navbar-collapse{display:block; position:absolute; top:25px; right:0; border-top:none;}
+.navbar-collapse > ul.nav > li{float:left;}
+
+section.visual{height:395px;}
+.carousel, 
+.carousel-inner,
+.carousel-caption{position:relative; left:0 !important; top:0 !important; margin:0; padding:0; width:1140px; height:395px;}
+
+.carousel-indicators {margin:0 auto; width:auto; position: absolute; left:50%; bottom:20px; text-align: center;}
+.carousel-indicators li{float:left;}
+
+.visual_txt{position:absolute; left:0}
+.visual_txt.txt1{width:376px;}
+.visual_txt.txt2{width:535px;}
+.visual_img{position:absolute; right:0;}

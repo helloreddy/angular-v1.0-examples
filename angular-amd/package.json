@@ -1,0 +1,19 @@
+{
+  "name": "angular-amd",
+  "version": "1.0.0",
+  "description": "This Project is for testing AngularJS and RequireJS.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mido Lee",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-minify-html": "^1.0.5",
+    "gulp-uglify": "^1.5.1"
+  }
+}

@@ -1,2 +1,1 @@
-# angular_lab
-a repository to test AngularJS Framework
+# angular-v1.0-examples
